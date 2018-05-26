@@ -127,7 +127,7 @@ namespace ScanMyBinCSharp
         {
             try
             {
-                string result = wc.DownloadString(resultURL + scanID);
+                string result = wc.DownloadString(resultURL + scanID + "/full");
 
                 JsonResult parsedJson = JsonConvert.DeserializeObject<JsonResult>(result);
 

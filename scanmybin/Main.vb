@@ -104,7 +104,7 @@ Public Class Main
     Private Function GetResult() As JsonResult
 
         Try
-            Dim result As String = wc.DownloadString(resultURL & scanID)
+            Dim result As String = wc.DownloadString(resultURL & scanID & "/full")
 
             Dim parsedJson As JsonResult = JsonConvert.DeserializeObject(Of JsonResult)(result)
 
