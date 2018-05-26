@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7670D032-18DF-46EB-9AD4-95AB25371C2B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>scanmybin.My.MyApplication</StartupObject>
-    <RootNamespace>scanmybin</RootNamespace>
-    <AssemblyName>scanmybin</AssemblyName>
+    <StartupObject>scanmybinVB.My.MyApplication</StartupObject>
+    <RootNamespace>scanmybinVB</RootNamespace>
+    <AssemblyName>scanmybinVB</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -20,7 +20,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>scanmybin.xml</DocumentationFile>
+    <DocumentationFile>scanmybinVB.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -30,7 +30,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>scanmybin.xml</DocumentationFile>
+    <DocumentationFile>scanmybinVB.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
