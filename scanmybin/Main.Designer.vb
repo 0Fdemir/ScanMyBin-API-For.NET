@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Main
     Inherits System.Windows.Forms.Form
 
     'Form, bileşen listesini temizlemeyi bırakmayı geçersiz kılar.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Main
     'NOT: Aşağıdaki yordam Windows Form Tasarımcısı için gereklidir
     'Windows Form Tasarımcısı kullanılarak değiştirilebilir.  
     'Kod düzenleyicisini kullanarak değiştirmeyin.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -207,7 +207,7 @@ Partial Class Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(395, 553)
+        Me.ClientSize = New System.Drawing.Size(395, 556)
         Me.Controls.Add(Me.lblDate)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.grid)

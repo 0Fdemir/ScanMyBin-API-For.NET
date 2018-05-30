@@ -30,15 +30,16 @@ namespace ScanMyBinCSharp
         private const string resultURL = "https://scanmybin.net/api/scan/";
 
         /// <summary>
-        ///     ''' 0 => "Scan created.",
-        ///     ''' 1 => "The uploaded file exceeds the upload_max_filesize.",
-        ///     ''' 2 => "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form.",
-        ///     ''' 3 => "The uploaded file was only partially uploaded.",
-        ///     ''' 4 => "Invalid API key.",
-        ///     ''' 5 => "This API key is expired.",
-        ///     ''' 6 => "This key can't be used for API.",
-        ///     ''' 7 => "Max authorized IP for this API."
-        ///     ''' </summary>
+        ///     0 => "Scan created.",
+        ///     1 => "The uploaded file exceeds the upload_max_filesize.",
+        ///     2 => "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form.",
+        ///     3 => "The uploaded file was only partially uploaded.",
+        ///     4 => "Invalid API key.",
+        ///     5 => "This API key is expired.",
+        ///     6 => "This key can't be used for API.",
+        ///     7 => "Max authorized IP for this API."
+        ///     0 => "Maintenance Mode."
+        ///     </summary>
         private enum UploadFlags
         {
             CREATED = 0,
@@ -48,7 +49,8 @@ namespace ScanMyBinCSharp
             INVALID_APIKEY = 4,
             EXPIRED_APIKEY = 5,
             CANT_USED = 6,
-            MAX_AUTHORIZED = 7
+            MAX_AUTHORIZED = 7,
+            MAINTENANCE = 8
         }
         #endregion
 
@@ -220,6 +222,8 @@ namespace ScanMyBinCSharp
                 return;
             }
 
+            grid.Rows.Clear();
+
             new Thread(ScanThread).Start();
         }
 
@@ -241,8 +245,14 @@ namespace ScanMyBinCSharp
         {
             DataGridViewCell cell = grid.Rows[e.RowIndex].Cells[e.ColumnIndex];
 
-            if ((string)cell.Value == "Clean")
-                e.CellStyle.ForeColor = Color.Green;
+            if (cell.ColumnIndex == 1)
+            {
+                if ((string)cell.Value == "Clean")
+                    e.CellStyle.ForeColor = Color.Green;
+                else
+                    e.CellStyle.ForeColor = Color.Red;
+            }
+            
         }
         #endregion
 

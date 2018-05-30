@@ -24,6 +24,7 @@ Public Class Main
     ''' 5 => "This API key is expired.",
     ''' 6 => "This key can't be used for API.",
     ''' 7 => "Max authorized IP for this API."
+    ''' 8 => "Maintenance mode."
     ''' </summary>
     Private Enum UploadFlags
         CREATED = 0
@@ -34,6 +35,7 @@ Public Class Main
         EXPIRED_APIKEY = 5
         CANT_USED = 6
         MAX_AUTHORIZED = 7
+        MAINTENANCE = 8
     End Enum
 
 #End Region
@@ -52,7 +54,6 @@ Public Class Main
     End Sub
 
     Public Function ScanFile(filename As String) As JsonResult
-
         Dim request As String
 
         SetStatus("Uploading...")
@@ -203,6 +204,8 @@ Public Class Main
             Return
         End If
 
+        grid.Rows.Clear()
+
         Call New Thread(AddressOf ScanThread).Start()
 
     End Sub
@@ -212,7 +215,13 @@ Public Class Main
     Private Sub grid_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles grid.CellFormatting
         Dim cell As DataGridViewCell = grid.Rows(e.RowIndex).Cells(e.ColumnIndex)
 
-        If cell.Value = "Clean" Then e.CellStyle.ForeColor = Color.Green
+        If cell.ColumnIndex = 1 Then
+            If cell.Value = "Clean" Then
+                e.CellStyle.ForeColor = Color.Green
+            Else
+                e.CellStyle.ForeColor = Color.Red
+            End If
+        End If
     End Sub
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
